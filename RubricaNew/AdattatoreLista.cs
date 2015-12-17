@@ -11,7 +11,7 @@ namespace RubricaNew
 		private readonly List<RubricaCellW> _rubricaCellW;
 		private readonly Activity _activity;
 
-		public AdattatoreLista (Activity activity, List<RubricaCellW> rubCellw)
+		public AdattatoreLista (Activity activity, List<RubricaCellW> rubCellw) : base()
 		{
 			_rubricaCellW = rubCellw;//.OrderBy (s => s.Nome).ToList ();
 			_activity = activity;
@@ -41,15 +41,13 @@ namespace RubricaNew
 				var rub = _rubricaCellW [position];
 
 				TextView text1 = view.FindViewById<TextView> (Android.Resource.Id.Text1);
-				text1.Text = rub.ToString();
+				text1.Text = rub.ToString ();
 				text1.SetTextColor (Android.Graphics.Color.LightSalmon);
 				TextView text2 = view.FindViewById<TextView> (Android.Resource.Id.Text2);
-				foreach (NumeriRubrica itm in rub.Numeri ) {
-					text2.Text += "[" + itm.TipoNumero  + "] " + itm.NumeroTelefono + "\r\n";
+				foreach (NumeriRubrica itm in rub.Numeri) {
+					text2.Text += "[" + itm.TipoNumero + "] " + itm.NumeroTelefono + "\r\n";
 				}
-
 			}
-
 			return view;
 		}
 	}
