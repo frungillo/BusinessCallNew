@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="generaProgrammato">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="dep" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="linea" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="generaProgrammatoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="generaProgrammatoResult" type="tns:ArrayOfVDAPFS" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfVDAPFS">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="VDAPFS" type="tns:VDAPFS" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="VDAPFS">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="DATAPROG" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="RESIDENZATG" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TG" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TM" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AUTISTA" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="COGNOME" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NOME" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="STR" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BUS" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="NOTE" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TMI" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TMF" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TGI" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TGF" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CONVALIDATO" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="TURNOSAE" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="StatisticheSAE">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="dep" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="lin" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="StatisticheSAEResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="StatisticheSAEResult" type="tns:Statistiche" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="Statistiche">
+        <xs:sequence>
+          <xs:element minOccurs="1" maxOccurs="1" name="P" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="MP" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="MM" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="G" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="S" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="L" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="SAE" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ALTRO" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CaricaDepositi">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="CaricaDepositiResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CaricaDepositiResult" type="tns:ArrayOfString" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfString">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="LineePerDep">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="dep" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LineePerDepResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="LineePerDepResult" type="tns:ArrayOfString" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRubricaAll">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="IMEI" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRubricaAllResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetRubricaAllResult" type="tns:ArrayOfRubricaCell" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfRubricaCell">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="RubricaCell" type="tns:RubricaCell" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RubricaCell">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Matricola" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Cognome" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Nome" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Utenza" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfVDAPFS" nillable="true" type="tns:ArrayOfVDAPFS" />
+      <xs:element name="Statistiche" type="tns:Statistiche" />
+      <xs:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <xs:element name="ArrayOfRubricaCell" nillable="true" type="tns:ArrayOfRubricaCell" />
+    </xs:schema>
+  </types>
+  <message name="generaProgrammatoSoapIn">
+    <part name="parameters" element="tns:generaProgrammato" />
+  </message>
+  <message name="generaProgrammatoSoapOut">
+    <part name="parameters" element="tns:generaProgrammatoResponse" />
+  </message>
+  <message name="StatisticheSAESoapIn">
+    <part name="parameters" element="tns:StatisticheSAE" />
+  </message>
+  <message name="StatisticheSAESoapOut">
+    <part name="parameters" element="tns:StatisticheSAEResponse" />
+  </message>
+  <message name="CaricaDepositiSoapIn">
+    <part name="parameters" element="tns:CaricaDepositi" />
+  </message>
+  <message name="CaricaDepositiSoapOut">
+    <part name="parameters" element="tns:CaricaDepositiResponse" />
+  </message>
+  <message name="LineePerDepSoapIn">
+    <part name="parameters" element="tns:LineePerDep" />
+  </message>
+  <message name="LineePerDepSoapOut">
+    <part name="parameters" element="tns:LineePerDepResponse" />
+  </message>
+  <message name="GetRubricaAllSoapIn">
+    <part name="parameters" element="tns:GetRubricaAll" />
+  </message>
+  <message name="GetRubricaAllSoapOut">
+    <part name="parameters" element="tns:GetRubricaAllResponse" />
+  </message>
+  <message name="generaProgrammatoHttpGetIn">
+    <part name="dep" type="s:string" />
+    <part name="linea" type="s:string" />
+  </message>
+  <message name="generaProgrammatoHttpGetOut">
+    <part name="Body" element="tns:ArrayOfVDAPFS" />
+  </message>
+  <message name="StatisticheSAEHttpGetIn">
+    <part name="dep" type="s:string" />
+    <part name="lin" type="s:string" />
+  </message>
+  <message name="StatisticheSAEHttpGetOut">
+    <part name="Body" element="tns:Statistiche" />
+  </message>
+  <message name="CaricaDepositiHttpGetIn" />
+  <message name="CaricaDepositiHttpGetOut">
+    <part name="Body" element="tns:ArrayOfString" />
+  </message>
+  <message name="LineePerDepHttpGetIn">
+    <part name="dep" type="s:string" />
+  </message>
+  <message name="LineePerDepHttpGetOut">
+    <part name="Body" element="tns:ArrayOfString" />
+  </message>
+  <message name="GetRubricaAllHttpGetIn">
+    <part name="IMEI" type="s:string" />
+  </message>
+  <message name="GetRubricaAllHttpGetOut">
+    <part name="Body" element="tns:ArrayOfRubricaCell" />
+  </message>
+  <message name="generaProgrammatoHttpPostIn">
+    <part name="dep" type="s:string" />
+    <part name="linea" type="s:string" />
+  </message>
+  <message name="generaProgrammatoHttpPostOut">
+    <part name="Body" element="tns:ArrayOfVDAPFS" />
+  </message>
+  <message name="StatisticheSAEHttpPostIn">
+    <part name="dep" type="s:string" />
+    <part name="lin" type="s:string" />
+  </message>
+  <message name="StatisticheSAEHttpPostOut">
+    <part name="Body" element="tns:Statistiche" />
+  </message>
+  <message name="CaricaDepositiHttpPostIn" />
+  <message name="CaricaDepositiHttpPostOut">
+    <part name="Body" element="tns:ArrayOfString" />
+  </message>
+  <message name="LineePerDepHttpPostIn">
+    <part name="dep" type="s:string" />
+  </message>
+  <message name="LineePerDepHttpPostOut">
+    <part name="Body" element="tns:ArrayOfString" />
+  </message>
+  <message name="GetRubricaAllHttpPostIn">
+    <part name="IMEI" type="s:string" />
+  </message>
+  <message name="GetRubricaAllHttpPostOut">
+    <part name="Body" element="tns:ArrayOfRubricaCell" />
+  </message>
+  <portType name="WebService1Soap">
+    <operation name="generaProgrammato">
+      <input message="tns:generaProgrammatoSoapIn" />
+      <output message="tns:generaProgrammatoSoapOut" />
+    </operation>
+    <operation name="StatisticheSAE">
+      <input message="tns:StatisticheSAESoapIn" />
+      <output message="tns:StatisticheSAESoapOut" />
+    </operation>
+    <operation name="CaricaDepositi">
+      <input message="tns:CaricaDepositiSoapIn" />
+      <output message="tns:CaricaDepositiSoapOut" />
+    </operation>
+    <operation name="LineePerDep">
+      <input message="tns:LineePerDepSoapIn" />
+      <output message="tns:LineePerDepSoapOut" />
+    </operation>
+    <operation name="GetRubricaAll">
+      <input message="tns:GetRubricaAllSoapIn" />
+      <output message="tns:GetRubricaAllSoapOut" />
+    </operation>
+  </portType>
+  <portType name="WebService1HttpGet">
+    <operation name="generaProgrammato">
+      <input message="tns:generaProgrammatoHttpGetIn" />
+      <output message="tns:generaProgrammatoHttpGetOut" />
+    </operation>
+    <operation name="StatisticheSAE">
+      <input message="tns:StatisticheSAEHttpGetIn" />
+      <output message="tns:StatisticheSAEHttpGetOut" />
+    </operation>
+    <operation name="CaricaDepositi">
+      <input message="tns:CaricaDepositiHttpGetIn" />
+      <output message="tns:CaricaDepositiHttpGetOut" />
+    </operation>
+    <operation name="LineePerDep">
+      <input message="tns:LineePerDepHttpGetIn" />
+      <output message="tns:LineePerDepHttpGetOut" />
+    </operation>
+    <operation name="GetRubricaAll">
+      <input message="tns:GetRubricaAllHttpGetIn" />
+      <output message="tns:GetRubricaAllHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="WebService1HttpPost">
+    <operation name="generaProgrammato">
+      <input message="tns:generaProgrammatoHttpPostIn" />
+      <output message="tns:generaProgrammatoHttpPostOut" />
+    </operation>
+    <operation name="StatisticheSAE">
+      <input message="tns:StatisticheSAEHttpPostIn" />
+      <output message="tns:StatisticheSAEHttpPostOut" />
+    </operation>
+    <operation name="CaricaDepositi">
+      <input message="tns:CaricaDepositiHttpPostIn" />
+      <output message="tns:CaricaDepositiHttpPostOut" />
+    </operation>
+    <operation name="LineePerDep">
+      <input message="tns:LineePerDepHttpPostIn" />
+      <output message="tns:LineePerDepHttpPostOut" />
+    </operation>
+    <operation name="GetRubricaAll">
+      <input message="tns:GetRubricaAllHttpPostIn" />
+      <output message="tns:GetRubricaAllHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="generaProgrammato">
+      <soap:operation soapAction="http://tempuri.org/generaProgrammato" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="StatisticheSAE">
+      <soap:operation soapAction="http://tempuri.org/StatisticheSAE" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaDepositi">
+      <soap:operation soapAction="http://tempuri.org/CaricaDepositi" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LineePerDep">
+      <soap:operation soapAction="http://tempuri.org/LineePerDep" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetRubricaAll">
+      <soap:operation soapAction="http://tempuri.org/GetRubricaAll" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="generaProgrammato">
+      <soap12:operation soapAction="http://tempuri.org/generaProgrammato" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="StatisticheSAE">
+      <soap12:operation soapAction="http://tempuri.org/StatisticheSAE" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaDepositi">
+      <soap12:operation soapAction="http://tempuri.org/CaricaDepositi" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="LineePerDep">
+      <soap12:operation soapAction="http://tempuri.org/LineePerDep" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetRubricaAll">
+      <soap12:operation soapAction="http://tempuri.org/GetRubricaAll" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="WebService1HttpGet" type="tns:WebService1HttpGet">
+    <http:binding verb="GET" />
+    <operation name="generaProgrammato">
+      <http:operation location="/generaProgrammato" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="StatisticheSAE">
+      <http:operation location="/StatisticheSAE" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="CaricaDepositi">
+      <http:operation location="/CaricaDepositi" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="LineePerDep">
+      <http:operation location="/LineePerDep" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetRubricaAll">
+      <http:operation location="/GetRubricaAll" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="WebService1HttpPost" type="tns:WebService1HttpPost">
+    <http:binding verb="POST" />
+    <operation name="generaProgrammato">
+      <http:operation location="/generaProgrammato" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="StatisticheSAE">
+      <http:operation location="/StatisticheSAE" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="CaricaDepositi">
+      <http:operation location="/CaricaDepositi" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="LineePerDep">
+      <http:operation location="/LineePerDep" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="GetRubricaAll">
+      <http:operation location="/GetRubricaAll" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WebService1">
+    <port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://m.anm.it/SeviceCruscottoSae.asmx" />
+    </port>
+    <port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://m.anm.it/SeviceCruscottoSae.asmx" />
+    </port>
+    <port name="WebService1HttpGet" binding="tns:WebService1HttpGet">
+      <http:address location="http://m.anm.it/SeviceCruscottoSae.asmx" />
+    </port>
+    <port name="WebService1HttpPost" binding="tns:WebService1HttpPost">
+      <http:address location="http://m.anm.it/SeviceCruscottoSae.asmx" />
+    </port>
+  </service>
+</definitions>

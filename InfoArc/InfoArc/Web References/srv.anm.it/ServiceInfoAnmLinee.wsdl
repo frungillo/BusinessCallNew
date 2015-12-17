@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://m.anm.it/srv/" xmlns:tns="http://m.anm.it/srv/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://m.anm.it/srv/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://m.anm.it/srv/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="CaricaPosizioneVeicolo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="linea" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CaricaPosizioneVeicoloResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CaricaPosizioneVeicoloResult" type="tns:ArrayOfPosizioneVeicolo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfPosizioneVeicolo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PosizioneVeicolo" type="tns:PosizioneVeicolo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PosizioneVeicolo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="veicolo" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="linea" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="lat" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="lon" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="nodor" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="noddes" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="capDst" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="time" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="stato" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CaricaElencoLinee">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="CaricaElencoLineeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CaricaElencoLineeResult" type="tns:ArrayOfLinea" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfLinea">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Linea" type="tns:Linea" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Linea">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="linea" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="treno" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="dateFrom" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="timeFrom" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="dateTo" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="timeTo" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="tipoEvento" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="locEvento" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="stato" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CaricaElencoComuni">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="CaricaElencoComuniResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CaricaElencoComuniResult" type="tns:ArrayOfComune" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfComune">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Comune" type="tns:Comune" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Comune">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="comune" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="stato" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CaricaElencoPaline">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="CaricaElencoPalineResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CaricaElencoPalineResult" type="tns:ArrayOfPalina" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfPalina">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Palina" type="tns:Palina" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Palina">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="id" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="nome" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="stato" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CaricaPrevisioni">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="Palina" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CaricaPrevisioniResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CaricaPrevisioniResult" type="tns:ArrayOfPrevisione" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfPrevisione">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Previsione" type="tns:Previsione" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Previsione">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="id" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="nome" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="time" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="linea" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="timeMin" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="stato" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CaricaTransiti">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="Palina" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CaricaTransitiResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CaricaTransitiResult" type="tns:ArrayOfLinea" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CaricaPercorsoLinea">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="linea" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CaricaPercorsoLineaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CaricaPercorsoLineaResult" type="tns:ArrayOfPercorso" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfPercorso">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Percorso" type="tns:Percorso" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Percorso">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="id" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="nome" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="lat" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="lon" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="verso" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ord" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="stato" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RilevaEsistenzaFermata">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="fermata" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RilevaEsistenzaFermataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RilevaEsistenzaFermataResult" type="tns:ArrayOfPercorso" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CaricaFermateStrada">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="strada" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="citta" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CaricaFermateStradaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CaricaFermateStradaResult" type="tns:ArrayOfPercorso" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RilevaAnomalieLinea">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="linea" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RilevaAnomalieLineaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="RilevaAnomalieLineaResult" type="tns:ArrayOfLinea" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </types>
+  <message name="CaricaPosizioneVeicoloSoapIn">
+    <part name="parameters" element="tns:CaricaPosizioneVeicolo" />
+  </message>
+  <message name="CaricaPosizioneVeicoloSoapOut">
+    <part name="parameters" element="tns:CaricaPosizioneVeicoloResponse" />
+  </message>
+  <message name="CaricaElencoLineeSoapIn">
+    <part name="parameters" element="tns:CaricaElencoLinee" />
+  </message>
+  <message name="CaricaElencoLineeSoapOut">
+    <part name="parameters" element="tns:CaricaElencoLineeResponse" />
+  </message>
+  <message name="CaricaElencoComuniSoapIn">
+    <part name="parameters" element="tns:CaricaElencoComuni" />
+  </message>
+  <message name="CaricaElencoComuniSoapOut">
+    <part name="parameters" element="tns:CaricaElencoComuniResponse" />
+  </message>
+  <message name="CaricaElencoPalineSoapIn">
+    <part name="parameters" element="tns:CaricaElencoPaline" />
+  </message>
+  <message name="CaricaElencoPalineSoapOut">
+    <part name="parameters" element="tns:CaricaElencoPalineResponse" />
+  </message>
+  <message name="CaricaPrevisioniSoapIn">
+    <part name="parameters" element="tns:CaricaPrevisioni" />
+  </message>
+  <message name="CaricaPrevisioniSoapOut">
+    <part name="parameters" element="tns:CaricaPrevisioniResponse" />
+  </message>
+  <message name="CaricaTransitiSoapIn">
+    <part name="parameters" element="tns:CaricaTransiti" />
+  </message>
+  <message name="CaricaTransitiSoapOut">
+    <part name="parameters" element="tns:CaricaTransitiResponse" />
+  </message>
+  <message name="CaricaPercorsoLineaSoapIn">
+    <part name="parameters" element="tns:CaricaPercorsoLinea" />
+  </message>
+  <message name="CaricaPercorsoLineaSoapOut">
+    <part name="parameters" element="tns:CaricaPercorsoLineaResponse" />
+  </message>
+  <message name="RilevaEsistenzaFermataSoapIn">
+    <part name="parameters" element="tns:RilevaEsistenzaFermata" />
+  </message>
+  <message name="RilevaEsistenzaFermataSoapOut">
+    <part name="parameters" element="tns:RilevaEsistenzaFermataResponse" />
+  </message>
+  <message name="CaricaFermateStradaSoapIn">
+    <part name="parameters" element="tns:CaricaFermateStrada" />
+  </message>
+  <message name="CaricaFermateStradaSoapOut">
+    <part name="parameters" element="tns:CaricaFermateStradaResponse" />
+  </message>
+  <message name="RilevaAnomalieLineaSoapIn">
+    <part name="parameters" element="tns:RilevaAnomalieLinea" />
+  </message>
+  <message name="RilevaAnomalieLineaSoapOut">
+    <part name="parameters" element="tns:RilevaAnomalieLineaResponse" />
+  </message>
+  <portType name="ServiceInfoAnmLineeClasseSoap">
+    <operation name="CaricaPosizioneVeicolo">
+      <input message="tns:CaricaPosizioneVeicoloSoapIn" />
+      <output message="tns:CaricaPosizioneVeicoloSoapOut" />
+    </operation>
+    <operation name="CaricaElencoLinee">
+      <input message="tns:CaricaElencoLineeSoapIn" />
+      <output message="tns:CaricaElencoLineeSoapOut" />
+    </operation>
+    <operation name="CaricaElencoComuni">
+      <input message="tns:CaricaElencoComuniSoapIn" />
+      <output message="tns:CaricaElencoComuniSoapOut" />
+    </operation>
+    <operation name="CaricaElencoPaline">
+      <input message="tns:CaricaElencoPalineSoapIn" />
+      <output message="tns:CaricaElencoPalineSoapOut" />
+    </operation>
+    <operation name="CaricaPrevisioni">
+      <input message="tns:CaricaPrevisioniSoapIn" />
+      <output message="tns:CaricaPrevisioniSoapOut" />
+    </operation>
+    <operation name="CaricaTransiti">
+      <input message="tns:CaricaTransitiSoapIn" />
+      <output message="tns:CaricaTransitiSoapOut" />
+    </operation>
+    <operation name="CaricaPercorsoLinea">
+      <input message="tns:CaricaPercorsoLineaSoapIn" />
+      <output message="tns:CaricaPercorsoLineaSoapOut" />
+    </operation>
+    <operation name="RilevaEsistenzaFermata">
+      <input message="tns:RilevaEsistenzaFermataSoapIn" />
+      <output message="tns:RilevaEsistenzaFermataSoapOut" />
+    </operation>
+    <operation name="CaricaFermateStrada">
+      <input message="tns:CaricaFermateStradaSoapIn" />
+      <output message="tns:CaricaFermateStradaSoapOut" />
+    </operation>
+    <operation name="RilevaAnomalieLinea">
+      <input message="tns:RilevaAnomalieLineaSoapIn" />
+      <output message="tns:RilevaAnomalieLineaSoapOut" />
+    </operation>
+  </portType>
+  <binding name="ServiceInfoAnmLineeClasseSoap" type="tns:ServiceInfoAnmLineeClasseSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="CaricaPosizioneVeicolo">
+      <soap:operation soapAction="http://m.anm.it/srv/CaricaPosizioneVeicolo" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaElencoLinee">
+      <soap:operation soapAction="http://m.anm.it/srv/CaricaElencoLinee" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaElencoComuni">
+      <soap:operation soapAction="http://m.anm.it/srv/CaricaElencoComuni" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaElencoPaline">
+      <soap:operation soapAction="http://m.anm.it/srv/CaricaElencoPaline" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaPrevisioni">
+      <soap:operation soapAction="http://m.anm.it/srv/CaricaPrevisioni" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaTransiti">
+      <soap:operation soapAction="http://m.anm.it/srv/CaricaTransiti" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaPercorsoLinea">
+      <soap:operation soapAction="http://m.anm.it/srv/CaricaPercorsoLinea" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RilevaEsistenzaFermata">
+      <soap:operation soapAction="http://m.anm.it/srv/RilevaEsistenzaFermata" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaFermateStrada">
+      <soap:operation soapAction="http://m.anm.it/srv/CaricaFermateStrada" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RilevaAnomalieLinea">
+      <soap:operation soapAction="http://m.anm.it/srv/RilevaAnomalieLinea" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="ServiceInfoAnmLineeClasseSoap12" type="tns:ServiceInfoAnmLineeClasseSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="CaricaPosizioneVeicolo">
+      <soap12:operation soapAction="http://m.anm.it/srv/CaricaPosizioneVeicolo" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaElencoLinee">
+      <soap12:operation soapAction="http://m.anm.it/srv/CaricaElencoLinee" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaElencoComuni">
+      <soap12:operation soapAction="http://m.anm.it/srv/CaricaElencoComuni" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaElencoPaline">
+      <soap12:operation soapAction="http://m.anm.it/srv/CaricaElencoPaline" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaPrevisioni">
+      <soap12:operation soapAction="http://m.anm.it/srv/CaricaPrevisioni" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaTransiti">
+      <soap12:operation soapAction="http://m.anm.it/srv/CaricaTransiti" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaPercorsoLinea">
+      <soap12:operation soapAction="http://m.anm.it/srv/CaricaPercorsoLinea" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RilevaEsistenzaFermata">
+      <soap12:operation soapAction="http://m.anm.it/srv/RilevaEsistenzaFermata" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CaricaFermateStrada">
+      <soap12:operation soapAction="http://m.anm.it/srv/CaricaFermateStrada" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RilevaAnomalieLinea">
+      <soap12:operation soapAction="http://m.anm.it/srv/RilevaAnomalieLinea" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServiceInfoAnmLineeClasse">
+    <port name="ServiceInfoAnmLineeClasseSoap" binding="tns:ServiceInfoAnmLineeClasseSoap">
+      <soap:address location="http://srv.anm.it/ServiceInfoAnmLinee.asmx" />
+    </port>
+    <port name="ServiceInfoAnmLineeClasseSoap12" binding="tns:ServiceInfoAnmLineeClasseSoap12">
+      <soap12:address location="http://srv.anm.it/ServiceInfoAnmLinee.asmx" />
+    </port>
+  </service>
+</definitions>
