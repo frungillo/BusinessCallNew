@@ -11,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace RubricaNew
+namespace BusinessCall
 {
 	[Activity (
 		Label = "Rubrica ANM - Chiama",

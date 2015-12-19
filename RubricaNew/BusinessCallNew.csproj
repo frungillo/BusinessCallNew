@@ -6,14 +6,14 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{99985EF7-676A-4CAD-99F3-B2D203F7B716}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>RubricaNew</RootNamespace>
+    <RootNamespace>BusinessCall</RootNamespace>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidApplication>True</AndroidApplication>
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <AssemblyName>RubricaNew</AssemblyName>
+    <AssemblyName>BusinessCall</AssemblyName>
     <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
@@ -54,6 +54,7 @@
     <Compile Include="AdattatoreLista.cs" />
     <Compile Include="RubricaActivity.cs" />
     <Compile Include="CallPhoneActivity.cs" />
+    <Compile Include="frmOpzioni.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -70,6 +71,7 @@
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\layout\callPhone.axml" />
     <AndroidResource Include="Resources\layout\test.axml" />
+    <AndroidResource Include="Resources\layout\frmOpzioni.axml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
