@@ -48,10 +48,22 @@ namespace BusinessCall
 			public const int anmsmall = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int icon = 2130837505;
+			public const int backspace = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int ict_logo = 2130837506;
+			public const int call = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int call_2 = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int icon = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int ict_logo = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int option = 2130837510;
 			
 			static Drawable()
 			{
@@ -66,26 +78,35 @@ namespace BusinessCall
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060024
-			public const int btnAnnulla = 2131099684;
+			// aapt resource value: 0x7f060026
+			public const int btnAnnulla = 2131099686;
 			
-			// aapt resource value: 0x7f06001d
-			public const int btnChiama = 2131099677;
+			// aapt resource value: 0x7f06000d
+			public const int btnBack = 2131099661;
+			
+			// aapt resource value: 0x7f06001e
+			public const int btnChiama = 2131099678;
 			
 			// aapt resource value: 0x7f060015
 			public const int btnEliminaMessaggio = 2131099669;
 			
-			// aapt resource value: 0x7f060020
-			public const int btnNumero1 = 2131099680;
-			
-			// aapt resource value: 0x7f060021
-			public const int btnNumero2 = 2131099681;
-			
 			// aapt resource value: 0x7f060022
-			public const int btnNumero3 = 2131099682;
+			public const int btnNumero1 = 2131099682;
 			
 			// aapt resource value: 0x7f060023
-			public const int btnNumero4 = 2131099683;
+			public const int btnNumero2 = 2131099683;
+			
+			// aapt resource value: 0x7f060024
+			public const int btnNumero3 = 2131099684;
+			
+			// aapt resource value: 0x7f060025
+			public const int btnNumero4 = 2131099685;
+			
+			// aapt resource value: 0x7f06001f
+			public const int btnOpzioni = 2131099679;
+			
+			// aapt resource value: 0x7f06001c
+			public const int btnSalva = 2131099676;
 			
 			// aapt resource value: 0x7f06000b
 			public const int button0 = 2131099659;
@@ -123,9 +144,6 @@ namespace BusinessCall
 			// aapt resource value: 0x7f06000f
 			public const int buttonDel = 2131099663;
 			
-			// aapt resource value: 0x7f06000d
-			public const int buttonMessage = 2131099661;
-			
 			// aapt resource value: 0x7f06000c
 			public const int buttonSharp = 2131099660;
 			
@@ -153,8 +171,8 @@ namespace BusinessCall
 			// aapt resource value: 0x7f060016
 			public const int linearLayout3 = 2131099670;
 			
-			// aapt resource value: 0x7f06001e
-			public const int listView1 = 2131099678;
+			// aapt resource value: 0x7f060020
+			public const int listView1 = 2131099680;
 			
 			// aapt resource value: 0x7f060011
 			public const int textView1 = 2131099665;
@@ -165,8 +183,8 @@ namespace BusinessCall
 			// aapt resource value: 0x7f060017
 			public const int textView3 = 2131099671;
 			
-			// aapt resource value: 0x7f06001f
-			public const int txtNominativo = 2131099679;
+			// aapt resource value: 0x7f060021
+			public const int txtNominativo = 2131099681;
 			
 			// aapt resource value: 0x7f060000
 			public const int txtNumeroCall = 2131099648;
@@ -174,8 +192,8 @@ namespace BusinessCall
 			// aapt resource value: 0x7f060012
 			public const int txtPrefissoBusiness = 2131099666;
 			
-			// aapt resource value: 0x7f06001c
-			public const int txtricerca = 2131099676;
+			// aapt resource value: 0x7f06001d
+			public const int txtricerca = 2131099677;
 			
 			static Id()
 			{

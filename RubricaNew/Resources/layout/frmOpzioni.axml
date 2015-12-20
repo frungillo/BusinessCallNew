@@ -39,12 +39,12 @@
             android:layout_height="match_parent"
             android:id="@+id/textView2"
             android:gravity="center_vertical"
-            android:layout_weight="0.5" />
+            android:layout_weight="0.7" />
         <ToggleButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:id="@+id/btnEliminaMessaggio"
-            android:layout_weight="0.1"
+            android:layout_weight="0.3"
             android:gravity="center_vertical" />
     </LinearLayout>
     <LinearLayout
@@ -85,4 +85,9 @@
             android:text="Nome Visualizzato"
             android:id="@+id/chkOrdinaNomeVisualizzato" />
     </RadioGroup>
+    <Button
+        android:text="Salva"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSalva" />
 </LinearLayout>

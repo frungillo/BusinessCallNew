@@ -35,6 +35,11 @@ namespace BusinessCall
 			txtPrefisso = FindViewById<EditText> (Resource.Id.txtPrefissoBusiness);
 			chkGruppoOrdinamento = FindViewById<RadioGroup> (Resource.Id.chkGruppoOrdinamento);
 			btnEliminaMessaggio = FindViewById<ToggleButton> (Resource.Id.btnEliminaMessaggio);
+			Button btnSalva = FindViewById<Button> (Resource.Id.btnSalva);
+
+			btnSalva.Click += delegate {
+				OnBackPressed();
+			};
 
 			prefsBase  = PreferenceManager.GetDefaultSharedPreferences(this.Application);
 			prefs = prefsBase.Edit ();

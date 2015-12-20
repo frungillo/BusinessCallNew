@@ -50,15 +50,22 @@ namespace BusinessCall
 			ListView lst = FindViewById<ListView> (Resource.Id.listView1);
 			EditText txtRicerca = FindViewById<EditText> (Resource.Id.txtricerca );
 			ImageButton btnChiama = FindViewById<ImageButton> (Resource.Id.btnChiama);
+			ImageButton btnOpzioni = FindViewById<ImageButton> (Resource.Id.btnOpzioni);
 			prefsBase  = PreferenceManager.GetDefaultSharedPreferences(this.Application);
 			prefs = prefsBase.Edit ();
 
 
 			/*EventoClickBottone*/
 			btnChiama.Click += delegate {
+				Intent i = new Intent(this, typeof(CallPhoneActivity));
+				StartActivity(i);
+			};
+
+			btnOpzioni.Click+= delegate {
 				Intent i = new Intent(this, typeof(frmOpzioni));
 				StartActivityForResult(i,0);
 			};
+
 
 
 

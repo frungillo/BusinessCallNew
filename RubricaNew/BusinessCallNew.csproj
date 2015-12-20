@@ -72,6 +72,10 @@
     <AndroidResource Include="Resources\layout\callPhone.axml" />
     <AndroidResource Include="Resources\layout\test.axml" />
     <AndroidResource Include="Resources\layout\frmOpzioni.axml" />
+    <AndroidResource Include="Resources\drawable\call.png" />
+    <AndroidResource Include="Resources\drawable\call_2.png" />
+    <AndroidResource Include="Resources\drawable\backspace.png" />
+    <AndroidResource Include="Resources\drawable\option.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

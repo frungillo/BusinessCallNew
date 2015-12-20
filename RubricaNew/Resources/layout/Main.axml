@@ -13,15 +13,21 @@
         <EditText
             android:inputType="textPersonName"
             android:id="@+id/txtricerca"
-            android:hint="Ricerca o chiama"
+            android:hint="Ricerca"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.8" />
+            android:layout_weight="0.6" />
         <ImageButton
             android:src="@android:drawable/ic_dialog_dialer"
             android:id="@+id/btnChiama"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="0.2" />
+        <ImageButton
+            android:src="@android:drawable/ic_menu_manage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnOpzioni"
             android:layout_weight="0.2" />
     </LinearLayout>
     <ListView

@@ -10,6 +10,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Preferences;
+using Android.Media;
 
 namespace BusinessCall
 {
@@ -23,6 +25,9 @@ namespace BusinessCall
 	public class CallPhoneActivity : Activity
 	{
 		TextView txtMonitor;
+		ISharedPreferences prefsBase;
+		ISharedPreferencesEditor prefs;
+
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -30,6 +35,10 @@ namespace BusinessCall
 			// Create your application here
 			SetContentView(Resource.Layout.callPhone);
 			txtMonitor = FindViewById<TextView> (Resource.Id.txtNumeroCall);
+
+			prefsBase  = PreferenceManager.GetDefaultSharedPreferences(this.Application);
+			prefs = prefsBase.Edit ();
+
 			/*Dichiaro i Bottoni*/
 			Button btn1 = FindViewById<Button> (Resource.Id.button1);
 			Button btn2 = FindViewById<Button> (Resource.Id.button2);
@@ -44,11 +53,11 @@ namespace BusinessCall
 			Button btnStar = FindViewById<Button> (Resource.Id.buttonStar);
 			Button btnSharp = FindViewById<Button> (Resource.Id.buttonSharp);
 			ImageButton btnCall = FindViewById<ImageButton> (Resource.Id.buttonCall);
-			ImageButton btnMsg = FindViewById<ImageButton> (Resource.Id.buttonMessage);
+			ImageButton btnBack = FindViewById<ImageButton> (Resource.Id.btnBack);
 			ImageButton btnDel = FindViewById<ImageButton> (Resource.Id.buttonDel);
 			btnCall.Tag = "call";
 			btnDel.Tag = "del";
-			btnMsg.Tag = "msg";
+			btnBack.Tag = "back";
 
 			btn0.Click += onButtonClick;
 			btn1.Click += onButtonClick;
@@ -64,7 +73,7 @@ namespace BusinessCall
 			btnSharp.Click += onButtonClick;
 
 			btnCall.Click += imageButtonsClick;;
-			btnMsg.Click += imageButtonsClick;
+			btnBack.Click += imageButtonsClick;
 			btnDel.Click += imageButtonsClick;
 
 			txtMonitor.Text = "";
@@ -84,16 +93,15 @@ namespace BusinessCall
 			if (btn.Tag.ToString() == "call") {
 
 				Intent c = new Intent (Intent.ActionCall);
-				c.SetData (Android.Net.Uri.Parse ("tel:4146 " + txtMonitor.Text +" ,1" ));
+				string EliminaMessaggio = "";
+				if (prefsBase.GetBoolean ("EliminaMessaggio", false))
+					EliminaMessaggio = " ,1";
+				c.SetData (Android.Net.Uri.Parse ("tel:" +  prefsBase.GetString ("Prefisso", "4146") + txtMonitor.Text + EliminaMessaggio ));
 				StartActivity (c);
 			}
 
-			if (btn.Tag.ToString() == "msg") {
-				/*
-				Intent c = new Intent (Intent.CategoryAppMessaging);
-				c.SetData (Android.Net.Uri.Parse ("tel:4146 " + txtMonitor.Text));
-				StartActivity (c);
-				*/
+			if (btn.Tag.ToString() == "back") {
+				OnBackPressed ();
 			}
 		}
 
@@ -101,6 +109,15 @@ namespace BusinessCall
 		public void onButtonClick(Object sender, EventArgs e) {
 			Button btn = (Button)sender;
 			int test = 0;
+			//int streamType = AudioTrackMode.Stream;
+			//int volume = 50;
+			ToneGenerator toneGenerator = new ToneGenerator(Stream.Dtmf, Volume.Max);
+			//int toneType = (int)Tone.Dtmf0;
+			int durationMs = 300;
+			Tone tn; 
+			Enum.TryParse ("Dtmf" + btn.Text, true,out tn);
+			toneGenerator.StartTone(tn,durationMs);
+		
 			if (Int32.TryParse (btn.Text, out test)) {
 				txtMonitor.Text += btn.Text;
 			}
