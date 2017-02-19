@@ -16,6 +16,7 @@
     <AssemblyName>BusinessCall</AssemblyName>
     <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <AndroidTlsProvider></AndroidTlsProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <ConsolePause>false</ConsolePause>
-    <DebugType>full</DebugType>
+    <DebugType></DebugType>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -76,6 +77,20 @@
     <AndroidResource Include="Resources\drawable\call_2.png" />
     <AndroidResource Include="Resources\drawable\backspace.png" />
     <AndroidResource Include="Resources\drawable\option.png" />
+    <AndroidResource Include="Resources\drawable\FormaBottoneNormale.xml" />
+    <AndroidResource Include="Resources\drawable\FormaBottoneSchiacciato.xml" />
+    <AndroidResource Include="Resources\drawable\BottoniTastiera.xml" />
+    <AndroidResource Include="Resources\drawable\Display.xml" />
+    <AndroidResource Include="Resources\drawable\backspace48.png" />
+    <AndroidResource Include="Resources\drawable\phone96.png" />
+    <AndroidResource Include="Resources\drawable\exit96.png" />
+    <AndroidResource Include="Resources\drawable\BottoneChiamaNormale.xml" />
+    <AndroidResource Include="Resources\drawable\BottoneChiamaSchiacciato.xml" />
+    <AndroidResource Include="Resources\drawable\BottoneChiamata.xml" />
+    <AndroidResource Include="Resources\drawable\NumberPad96.png" />
+    <AndroidResource Include="Resources\drawable\Options96.png" />
+    <AndroidResource Include="Resources\drawable\Options32.png" />
+    <AndroidResource Include="Resources\drawable\tastiera48.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

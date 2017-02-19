@@ -140,7 +140,7 @@ namespace BusinessCall
 
 		private void SalvaSettaggi(string key,object value){
 			prefs.Remove (key);
-			if (value.GetType () == typeof(string)) {
+			if (value.GetType() == typeof(string)) {
 				prefs.PutString (key, (string)value);
 			} else if (value.GetType () == typeof(int)) {
 				prefs.PutInt (key, (int)value);
@@ -198,7 +198,7 @@ namespace BusinessCall
 						foreach (Phone tel in contatto.Phones) {
 							if (tel.Number != "") {
 								if (!rubItem.Numeri.Contains (new NumeriRubrica (tel.Label, tel.Number))) {
-									rubItem.Numeri.Add (new NumeriRubrica (tel.Label, tel.Number));
+									rubItem.Numeri.Add (new NumeriRubrica (tel.Label, tel.Number.Replace(" ","")));
 									flagTrovato = true;
 								}
 							}
@@ -281,8 +281,10 @@ namespace BusinessCall
 			int OrdineMenu = 1;
 			PopupMenu mnu = new PopupMenu (this, e.View);
 			mnu.Inflate (Resource.Menu.contexMenu);
+
 			mnu.Menu.Add (0, 0, OrdineMenu, sel.NomeVisualizzato);
-			mnu.Menu.FindItem (0).SetEnabled (false);
+			mnu.Menu.FindItem(0).SetEnabled (false);
+			mnu.Menu.FindItem(0).SetIcon(Android.Graphics.Drawables.Drawable.CreateFromPath(sel.ImagePath));
 
 			for (int i = 0; i < sel.Numeri.Count; i++) {
 				mnu.Menu.Add (0, IdMenu++, OrdineMenu++, "[" + sel.Numeri [i].TipoNumero + "] " + sel.Numeri [i].NumeroTelefono );

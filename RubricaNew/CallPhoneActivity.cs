@@ -74,6 +74,17 @@ namespace BusinessCall
 
 			btnCall.Click += imageButtonsClick;;
 			btnBack.Click += imageButtonsClick;
+			btnDel.LongClick += (sender, e) => {
+				try
+				{
+					ToneGenerator toneGenerator = new ToneGenerator(Stream.Dtmf, 100);
+					//int toneType = (int)Tone.Dtmf0;
+					int durationMs = 250;
+					toneGenerator.StartTone(Tone.CdmaPressholdkeyLite, durationMs);
+				}
+				catch { }
+				txtMonitor.Text = "";
+			};
 			btnDel.Click += imageButtonsClick;
 
 			txtMonitor.Text = "";
@@ -86,6 +97,14 @@ namespace BusinessCall
 			var btn = sender as ImageButton;
 
 			if (btn.Tag.ToString() == "del") {
+				try
+				{
+					ToneGenerator toneGenerator = new ToneGenerator(Stream.Dtmf, 100);
+					//int toneType = (int)Tone.Dtmf0;
+					int durationMs = 150;
+					toneGenerator.StartTone(Tone.CdmaPressholdkeyLite, durationMs);
+				}
+				catch { }
 				if (txtMonitor.Text.Length == 0)
 					return;
 				txtMonitor.Text = txtMonitor.Text.Substring (0, txtMonitor.Text.Length - 1);
@@ -111,12 +130,20 @@ namespace BusinessCall
 			int test = 0;
 			//int streamType = AudioTrackMode.Stream;
 			//int volume = 50;
-			ToneGenerator toneGenerator = new ToneGenerator(Stream.Dtmf, Volume.Max);
-			//int toneType = (int)Tone.Dtmf0;
-			int durationMs = 300;
-			Tone tn; 
-			Enum.TryParse ("Dtmf" + btn.Text, true,out tn);
-			toneGenerator.StartTone(tn,durationMs);
+			try
+			{
+				ToneGenerator toneGenerator = new ToneGenerator(Stream.Dtmf, 80);
+				//int toneType = (int)Tone.Dtmf0;
+				int durationMs = 300;
+				Tone tn;
+				Enum.TryParse("Dtmf" + btn.Text, true, out tn);
+				toneGenerator.StartTone(tn, durationMs);
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Errore Riproduzione Tono:" + ex.Message);
+			}
+
 		
 			if (Int32.TryParse (btn.Text, out test)) {
 				txtMonitor.Text += btn.Text;

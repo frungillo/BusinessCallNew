@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Android.App;
+using Android.Graphics;
 using Android.Views;
 using Android.Widget;
 
@@ -36,8 +37,8 @@ namespace BusinessCall
 			return position;
 		}
 
-		public override RubricaCellW this [int index] {
-			get { return _rubricaCellW [index]; }
+		public override RubricaCellW this [int position] {
+			get { return _rubricaCellW [position]; }
 		}
 
 		public override int Count {
@@ -57,9 +58,13 @@ namespace BusinessCall
 			ImageView img = view.FindViewById<ImageView> (Android.Resource.Id.Icon);
 			try {
 				Android.Graphics.Bitmap bm = Android.Graphics.BitmapFactory.DecodeFile (rub.ImagePath);
-				img.SetImageBitmap(bm);
+				Matrix m = new Matrix();
+				m.SetRectToRect(new RectF(0, 0, bm.Width, bm.Height), new RectF(0, 0, 48, 48), Matrix.ScaleToFit.Center);
+				Bitmap newBitMap = Bitmap.CreateScaledBitmap(bm, 48, 48, false); // Bitmap.CreateBitmap(bm, 0, 0, bm.Width, bm.Height, m, true);
+				img.SetImageBitmap(newBitMap);
 
-			} catch (System.Exception ex) {
+
+			} catch {
 				
 			}
 
@@ -67,7 +72,7 @@ namespace BusinessCall
 			TextView text1 = view.FindViewById<TextView> (Android.Resource.Id.Text1);
 			text1.Text = rub.ToString ();
 			text1.SetTextColor (Android.Graphics.Color.LightSalmon);
-			text1.SetTextSize (Android.Util.ComplexUnitType.Px, 34);
+			text1.SetTextSize (Android.Util.ComplexUnitType.Px, 60); //34
 			/*
 			TextView text2 = view.FindViewById<TextView> (Android.Resource.Id.Text2);
 			text2.Text = "";
